@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.HammerSystemsTestApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+
+    <style name="Theme.HammerSystemsTestApp" parent="Base.Theme.HammerSystemsTestApp" />
+
+    <style name="HeaderText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="ChipText" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+    </style>
+
+    <style name="RoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+    
+    <style name="SelectedChip" parent="Widget.Material3.Chip.Suggestion">
+        <item name="checkedIcon">@null</item>
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipCornerRadius">6dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="chipStartPadding">24dp</item>
+        <item name="chipEndPadding">24dp</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+</resources>
