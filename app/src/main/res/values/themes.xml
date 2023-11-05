@@ -4,6 +4,8 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:windowBackground">@color/background</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Theme.HammerSystemsTestApp" parent="Base.Theme.HammerSystemsTestApp" />
@@ -13,6 +15,13 @@
         <item name="fontFamily">@font/roboto</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="HelperText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/helper_text</item>
     </style>
 
     <style name="ChipText" parent="TextAppearance.MaterialComponents.Chip">
@@ -39,4 +48,15 @@
         <item name="android:elevation">4dp</item>
     </style>
 
+    <style name="ButtonStyle" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/pink</item>
+        <item name="cornerRadius">6dp</item>
+        <item name="textStartPadding">1dp</item>
+        <item name="textEndPadding">1dp</item>
+        <item name="android:textColor">@color/pink</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    
 </resources>

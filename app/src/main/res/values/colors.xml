@@ -8,4 +8,6 @@
     <color name="light_grey">#C3C4C9</color>
     <color name="light_pink">#33FD3A69</color>
     <color name="pink">#FD3A69</color>
+    <color name="light_grey2">#F3F5F9</color>
+    <color name="helper_text">#AAAAAD</color>
 </resources>

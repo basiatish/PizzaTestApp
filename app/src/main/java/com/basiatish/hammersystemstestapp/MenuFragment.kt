@@ -70,11 +70,11 @@ class MenuFragment : Fragment() {
     }
 
     inner class ItemHolder(view: View): RecyclerView.ViewHolder(view) {
-        var textField: TextView = view.findViewById(R.id.text) as TextView
+        var textField: TextView = view.findViewById(R.id.title) as TextView
     }
 
     inner class ItemHolder2(view: View): RecyclerView.ViewHolder(view) {
-        var textField: TextView = view.findViewById(R.id.text) as TextView
+        var textField: TextView = view.findViewById(R.id.title) as TextView
     }
 
 }
