@@ -10,4 +10,6 @@
     <color name="pink">#FD3A69</color>
     <color name="light_grey2">#F3F5F9</color>
     <color name="helper_text">#AAAAAD</color>
+    <color name="menu_item_grey">#7B7B7B</color>
+    <color name="menu_grey">#F0F0F0</color>
 </resources>

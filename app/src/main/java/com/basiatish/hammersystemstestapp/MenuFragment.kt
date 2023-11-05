@@ -45,36 +45,15 @@ class MenuFragment : Fragment() {
 
         binding.appBar.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
             if (abs(verticalOffset) - appBarLayout.totalScrollRange == 0)
-            {
-                binding.categoriesContainer.setBackgroundColor(resources.getColor(R.color.white, requireContext().theme))
-            }
+                binding.categoriesContainer.setBackgroundColor(
+                    resources.getColor(R.color.white, requireContext().theme))
             else
-            {
-                binding.categoriesContainer.setBackgroundColor(resources.getColor(R.color.background, requireContext().theme))
-            }
+                binding.categoriesContainer.setBackgroundColor(
+                    resources.getColor(R.color.background, requireContext().theme))
         }
-//        val items2 = listOf<String>("Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza")
-//        val adapter2 = object : RecyclerView.Adapter<ItemHolder2>() {
-//            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder2 {
-//                return ItemHolder2(LayoutInflater.from(parent.context).inflate(R.layout.menu_list_item, parent, false))
-//            }
-//            override fun getItemCount(): Int {
-//                return items2.size
-//            }
-//            override fun onBindViewHolder(holder: ItemHolder2, position: Int) {
-//            }
-//        }
-//        val layoutManager2 = LinearLayoutManager(requireContext())
-//        binding.menuList2.adapter = adapter2
-//        binding.menuList2.layoutManager = layoutManager2
     }
 
     inner class ItemHolder(view: View): RecyclerView.ViewHolder(view) {
         var textField: TextView = view.findViewById(R.id.title) as TextView
     }
-
-    inner class ItemHolder2(view: View): RecyclerView.ViewHolder(view) {
-        var textField: TextView = view.findViewById(R.id.title) as TextView
-    }
-
 }

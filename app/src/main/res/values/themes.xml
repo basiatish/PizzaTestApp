@@ -34,7 +34,30 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">10dp</item>
     </style>
-    
+
+    <style name="Toolbar">
+        <item name="android:background">@color/white</item>
+        <item name="android:popupTheme">@style/Widget.AppCompat.PopupWindow</item>
+    </style>
+
+    <style name="BottomMenu" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/menu_grey</item>
+        <item name="itemIconTint">@color/menu_item_color</item>
+        <item name="itemTextColor">@color/menu_item_color</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemActiveIndicatorStyle">@color/menu_grey</item>
+        <item name="itemTextAppearanceActive">@style/MenuText</item>
+        <item name="itemTextAppearanceInactive">@style/MenuText</item>
+        <item name="itemIconPadding">0dp</item>
+    </style>
+
+    <style name="MenuText" parent="TextAppearance.Material3.LabelMedium">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
     <style name="SelectedChip" parent="Widget.Material3.Chip.Suggestion">
         <item name="checkedIcon">@null</item>
         <item name="chipBackgroundColor">@color/chip_background_color</item>
