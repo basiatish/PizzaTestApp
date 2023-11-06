@@ -1,16 +1,17 @@
-package com.basiatish.hammersystemstestapp
+package com.basiatish.hammersystemstestapp.ui.menu
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.basiatish.hammersystemstestapp.App
+import com.basiatish.hammersystemstestapp.R
 import com.basiatish.hammersystemstestapp.databinding.MenuFragmentBinding
-import com.basiatish.hammersystemstestapp.databinding.Test2Binding
-import com.basiatish.hammersystemstestapp.databinding.TestBinding
+import javax.inject.Inject
 import kotlin.math.abs
 
 class MenuFragment : Fragment() {
@@ -18,31 +19,50 @@ class MenuFragment : Fragment() {
     private var _binding: MenuFragmentBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var adapter: MenuListAdapter
+
+    @Inject
+    lateinit var viewModel: MenuViewModel
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity().application as App).appComponent.menuComponent().create().inject(this)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = MenuFragmentBinding.inflate(layoutInflater, container, false)
+        viewModel.getMenu()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val items = listOf<String>("Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza", "Pizza")
-        val adapter = object : RecyclerView.Adapter<ItemHolder>() {
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
-                return ItemHolder(LayoutInflater.from(parent.context).inflate(R.layout.menu_list_item, parent, false))
-            }
-            override fun getItemCount(): Int {
-                return items.size
-            }
-            override fun onBindViewHolder(holder: ItemHolder, position: Int) {
-            }
-        }
+        adapter = MenuListAdapter()
         val layoutManager = LinearLayoutManager(requireContext())
         binding.menuList.adapter = adapter
         binding.menuList.layoutManager = layoutManager
 
+        setupObservers()
+        setupListeners()
+    }
+
+    private fun setupObservers() {
+        viewModel.menu.observe(this.viewLifecycleOwner) {
+            if (it.isNotEmpty()) {
+                adapter.submitList(it)
+            }
+        }
+        viewModel.error.observe(this.viewLifecycleOwner) {
+            if (it.isNotEmpty()) {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun setupListeners() {
         binding.appBar.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
             if (abs(verticalOffset) - appBarLayout.totalScrollRange == 0)
                 binding.categoriesContainer.setBackgroundColor(
@@ -51,9 +71,5 @@ class MenuFragment : Fragment() {
                 binding.categoriesContainer.setBackgroundColor(
                     resources.getColor(R.color.background, requireContext().theme))
         }
-    }
-
-    inner class ItemHolder(view: View): RecyclerView.ViewHolder(view) {
-        var textField: TextView = view.findViewById(R.id.title) as TextView
     }
 }

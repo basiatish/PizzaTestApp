@@ -1,7 +1,9 @@
-package com.basiatish.hammersystemstestapp
+package com.basiatish.hammersystemstestapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.basiatish.hammersystemstestapp.R
+import com.basiatish.hammersystemstestapp.ui.menu.MenuFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
