@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.basiatish.domain.entities.MenuItem
-import com.basiatish.hammersystemstestapp.GlideApp
 import com.basiatish.hammersystemstestapp.R
 import com.basiatish.hammersystemstestapp.databinding.MenuListItemBinding
+import com.basiatish.hammersystemstestapp.utils.GlideApp
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
